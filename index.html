@@ -1,0 +1,207 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Cards component</title>
+    <link rel="stylesheet" href="https://use.fontawesome.com/releases/v5.5.0/css/all.css" integrity="sha384-B4dIYHKNBt8Bc12p+WXckhzcICo0wtJAoU8YZTY5qE0Id1GSseTk6S+L3BlXeVIU" crossorigin="anonymous">
+    <style>
+        *{
+            margin: 0;padding: 0;box-sizing: border-box;
+        }
+        :root{
+            --gray: #818181;
+            --purple: #6200ee;
+        }
+        img {max-width:100%;height: auto;}
+        .card-wrapper{display:flex;flex-wrap: wrap;}
+        button{border: none;
+            background: none;}
+        .hidden{content-visibility: hidden;}
+        .hide{display: none;}
+        .card-container{width: 350px;
+            margin: 48px auto;
+            border-radius: 4px;
+            box-shadow: 0 2px 1px -1px rgb(0 0 0 / 20%), 0 1px 1px 0 rgb(0 0 0 / 14%), 0 1px 3px 0 rgb(0 0 0 / 12%);
+            display: flex;
+            flex-direction: column;
+            box-sizing: border-box;
+            height: fit-content;}
+        .card-img-top{border-top-right-radius: 4px;
+            border-top-left-radius: 4px;}
+        .card-title{
+            font-size: 1.25rem;
+            font-weight: 600;
+            color: black;
+        }
+        .card-author{
+            font-size: .875rem;
+            line-height: 1.375rem;
+            font-weight: 500;
+            color: var(--gray);
+        }
+        .card-info{padding: 1rem;}
+        .card-body{padding: 0 1rem 1rem;color: var(--gray);}
+        .card-action{padding: 8px;
+            min-height: 52px;
+            display: flex;
+            flex-direction: row;
+            align-items: center;}
+        .action-btn{color: var(--purple);}
+        .action-icon{color: var(--gray);}
+        .action-btn, .action-icon{flex-grow: 1;}
+
+        /* Basic W/ Text over Media */
+        .img-info-container{
+            position: relative;
+        }
+        .text-over-img{
+            position: absolute;
+            top: 0;
+        }
+        .text-over-img .card-title, .text-over-img .card-author{color: white;}
+        .card-body.body-after-img{padding-top: 1rem;}
+
+        /*with-header*/
+        .with-header img{order: 2;}
+        .with-header .card-info{order: 1;}
+        .with-header .card-body{order: 3;}
+        .with-header .card-action{order:4;}
+
+        /*Horizontal image and Text*/
+        .card-part-1{
+            display: flex;
+            flex-direction: row;
+        }
+        .card-part-1 img{max-width: 120px;}
+    </style>
+</head>
+<body>
+        <main class="card-wrapper">
+            <!-- basic card -->
+            <div class="card-container">
+                <img class="card-img-top" src="https://picsum.photos/600/400" alt="card-img">
+                <div class="card-info">
+                    <h3 class="card-title">Our Changing Planet</h3>
+                    <p class="card-author">by kurt Wagner</p>
+                </div>
+                <div class="card-body">
+                    <p class="description">Visit ten places on our planet that are undergoing the biggest changes today.
+                    </p>
+                </div>
+                <div class="card-action">
+                    <button class="action-btn">READ</button>
+                    <button class="action-btn">BOOKMARK</button>
+                    <button class="action-icon"><i class='fa fa-heart'></i></button>
+                    <button class="action-icon"><i class="fa fa-share-alt" aria-hidden="true"></i>
+                    </button>
+                    <button class="action-icon"><i class="fas fa-ellipsis-v"></i></button>
+                </div>
+            </div>
+
+            <!--Basic W/ Text over Media-->
+            <div class="card-container">
+                <div class="img-info-container">
+                    <img class="card-img-top" src="https://picsum.photos/600/400" alt="card-img">
+                    <div class="card-info text-over-img">
+                        <h3 class="card-title">Our Changing Planet</h3>
+                        <p class="card-author">by kurt Wagner</p>
+                    </div>
+                </div>
+                <div class="card-body body-after-img">
+                    <p class="description">Visit ten places on our planet that are undergoing the biggest changes today.
+                    </p>
+                </div>
+                <div class="card-action">
+                    <button class="action-btn">READ</button>
+                    <button class="action-btn">BOOKMARK</button>
+                    <button class="action-icon"><i class='fa fa-heart'></i></button>
+                    <button class="action-icon"><i class="fa fa-share-alt" aria-hidden="true"></i>
+                    </button>
+                    <button class="action-icon"><i class="fas fa-ellipsis-v"></i></button>
+                </div>
+            </div>
+
+            <!--Basic W/ Header-->
+            <div class="card-container with-header">
+                <img class="card-img-top" src="https://picsum.photos/600/400" alt="card-img">
+                <div class="card-info">
+                    <h3 class="card-title">Our Changing Planet</h3>
+                    <p class="card-author">by kurt Wagner</p>
+                </div>
+                <div class="card-body body-after-img">
+                    <p class="description">Visit ten places on our planet that are undergoing the biggest changes today.
+                    </p>
+                </div>
+                <div class="card-action">
+                    <button class="action-btn">READ</button>
+                    <button class="action-btn">BOOKMARK</button>
+                    <button class="action-icon"><i class='fa fa-heart'></i></button>
+                    <button class="action-icon"><i class="fa fa-share-alt" aria-hidden="true"></i></button>
+                    <button class="action-icon"><i class="fas fa-ellipsis-v"></i></button>
+                </div>
+            </div>
+
+            <!-- basic card with only buttons -->
+            <div class="card-container">
+                <img class="card-img-top" src="https://picsum.photos/600/400" alt="card-img">
+                <div class="card-info">
+                    <h3 class="card-title">Our Changing Planet</h3>
+                    <p class="card-author">by kurt Wagner</p>
+                </div>
+                <div class="card-body">
+                    <p class="description">Visit ten places on our planet that are undergoing the biggest changes today.
+                    </p>
+                </div>
+                <div class="card-action">
+                    <button class="action-btn">READ</button>
+                    <button class="action-btn">BOOKMARK</button>
+                    <button class="action-icon hidden"><i class='fa fa-heart'></i></button>
+                    <button class="action-icon hidden"><i class="fa fa-share-alt" aria-hidden="true"></i>
+                    </button>
+                    <button class="action-icon hidden"><i class="fas fa-ellipsis-v"></i></button>
+                </div>
+            </div>
+
+            <!-- basic card with only icons -->
+            <div class="card-container">
+                <img class="card-img-top" src="https://picsum.photos/600/400" alt="card-img">
+                <div class="card-info">
+                    <h3 class="card-title">Our Changing Planet</h3>
+                    <p class="card-author">by kurt Wagner</p>
+                </div>
+                <div class="card-body">
+                    <p class="description">Visit ten places on our planet that are undergoing the biggest changes today.
+                    </p>
+                </div>
+                <div class="card-action">
+                    <button class="action-btn hidden">READ</button>
+                    <button class="action-btn hidden">BOOKMARK</button>
+                    <button class="action-icon"><i class='fa fa-heart'></i></button>
+                    <button class="action-icon"><i class="fa fa-share-alt" aria-hidden="true"></i>
+                    </button>
+                    <button class="action-icon"><i class="fas fa-ellipsis-v"></i></button>
+                </div>
+            </div>
+
+            <!-- Horizontal image and Text -->
+            <div class="card-container">
+                <div class="card-part-1">
+                    <img class="card-img-top" src="https://picsum.photos/600/400" alt="card-img">
+                    <div class="card-info">
+                        <h3 class="card-title">Our Changing Planet</h3>
+                        <p class="card-author">by kurt Wagner</p>
+                    </div>
+                </div>
+                <div class="card-action">
+                    <button class="action-btn">READ</button>
+                    <button class="action-btn">BOOKMARK</button>
+                    <button class="action-icon"><i class='fa fa-heart'></i></button>
+                    <button class="action-icon"><i class="fa fa-share-alt" aria-hidden="true"></i>
+                    </button>
+                    <button class="action-icon"><i class="fas fa-ellipsis-v"></i></button>
+                </div>
+            </div>
+        </main>
+</body>
+</html>
